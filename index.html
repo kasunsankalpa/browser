@@ -16,4 +16,32 @@
     <app-root></app-root>
 <script src="runtime-es2015.a4dadbc03350107420a4.js" type="module"></script><script src="runtime-es5.a4dadbc03350107420a4.js" nomodule="" defer=""></script><script src="polyfills-es5.c12f2235443bead31877.js" nomodule="" defer=""></script><script src="polyfills-es2015.75c375c674ece37157aa.js" type="module"></script><script src="scripts.d36bebaf8975cc6f9e3a.js" defer=""></script><script src="main-es2015.a21ce37e1dda32337860.js" type="module"></script><script src="main-es5.a21ce37e1dda32337860.js" nomodule="" defer=""></script></body>
 
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "103523175218460");
+  chatbox.setAttribute("attribution", "biz_inbox");
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v12.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
 </html>
